@@ -2,7 +2,7 @@
 
 @each $day, $x in $all-days {
   .calendar--start-day-#{$day} .calendar__day:first-child {
-    margin-left: calc(($x - 1) * ($day-size + $gap-size));
+    margin-left: ($x - 1) * ($day-size + $gap-size);
   }
 }
 
@@ -66,5 +66,3 @@ body {
     content: '#{$i}';
   }
 }
-
-
