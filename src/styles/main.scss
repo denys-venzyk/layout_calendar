@@ -1,0 +1,22 @@
+@import 'vars';
+
+body {
+  margin: 0;
+
+}
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap-size;
+
+  &__day {
+    box-sizing: border-box;
+    align-content: center;
+    height: $day-size;
+    width: $day-size;
+    background-color: #eee;
+    border: 1px solid #000;
+    padding: 10px;
+  }
+}
