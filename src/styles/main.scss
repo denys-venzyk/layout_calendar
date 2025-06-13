@@ -9,14 +9,51 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: $gap-size;
+  width: $calendar-width;
 
   &__day {
     box-sizing: border-box;
     align-content: center;
+
     height: $day-size;
     width: $day-size;
+
     background-color: #eee;
     border: 1px solid #000;
     padding: 10px;
+
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    font-family: Arial, sans-serif;
+    transition: transform $transition-duration, background-color $transition-duration;
+  }
+
+  &__day:hover{
+    cursor: pointer;
+
+    background-color: #FFBFCB;
+
+    transform: translateY(-20px);
+  }
+}
+
+@for $i from 1 through 31 {
+  .calendar__day:nth-child(#{$i})::before {
+    content: '#{$i}';
+  }
+}
+
+
+@for $i from 28 through 31 {
+  .calendar--month-length-#{$i}
+    .calendar__day:nth-child(n + #{($i + 1)}) {
+      display: none;
+    }
+  }
+
+@each $day, $x in $all-days {
+  .calendar--start-day-#{$day} .calendar__day:first-child {
+    margin-left: ($x - 1) * ($day-size + $gap-size);
   }
 }
