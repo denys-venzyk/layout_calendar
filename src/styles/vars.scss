@@ -1,13 +1,14 @@
+$border-size: 1px;
 $day-size: 100px;
 $gap-size: 1px;
-$calendar-width: (($day-size * 7) + ($gap-size * 6));
+$calendar-width: (($day-size * 7) + ($gap-size * 6) + 20px);
 $transition-duration: 0.5s;
 $all-days: (
-  monday: 1,
-  tuesday: 2,
-  wednesday: 3,
-  thursday: 4,
-  friday: 5,
-  saturday: 6,
-  sunday: 7
+  sunday: 1,
+  monday: 2,
+  tuesday: 3,
+  wednesday: 4,
+  thursday: 5,
+  friday: 6,
+  saturday: 7,
 );
